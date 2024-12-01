@@ -1,0 +1,254 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+  background: #000; /* Black background */
+}
+
+/* Background with Blue Meteor Effect */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  background: #000;
+}
+
+.meteors {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.meteor {
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: linear-gradient(to left, rgba(0, 100, 255, 0), rgba(0, 100, 255, 0.7));
+  box-shadow: 0 0 20px rgba(0, 100, 255, 0.8);
+  filter: blur(2px);
+  animation: shoot 3s linear infinite;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(120%) translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-20%) translateY(100px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+/* Heart Animation */
+.heart-container {
+  display: none; /* Default: hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.heart-container.active {
+  display: flex; /* Display when active */
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background-color: #e63946;
+  transform: rotate(-45deg);
+  animation: beat 1s infinite ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: #e63946;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -60px;
+  left: 0;
+}
+
+.heart::after {
+  left: 60px;
+  top: 0;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-45deg);
+  }
+}
+
+/* Quiz Container */
+.quiz-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 450px;
+  width: 90%;
+  margin: 5% auto;
+  box-shadow: 0 15px 50px rgba(0, 100, 255, 0.5);
+  backdrop-filter: blur(15px);
+}
+
+/* Title */
+.title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #00bfff;
+  text-shadow: 0px 0px 15px #00bfff, 0px 0px 30px #004e92;
+}
+
+/* Question */
+.question {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0px 0px 5px #fff;
+}
+
+/* Options */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+button {
+  background: linear-gradient(145deg, #1f8ef1, #5d26c1);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(0, 100, 255, 0.7);
+}
+
+button.correct {
+  background: #38ef7d;
+}
+
+button.incorrect {
+  background: #f85032;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  background: linear-gradient(145deg, #662d8c, #ed1e79);
+  padding: 12px 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(255, 20, 147, 0.7);
+}
+
+/* Progress and Message */
+.progress, .message {
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+/* Responsive Design Adjustments */
+
+/* For tablets and smaller devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 20px;
+    font-size: 1em;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 12px 15px;
+  }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .quiz-container {
+    width: 95%;
+    font-size: 0.9em;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .question {
+    font-size: 1.2em;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 10px 12px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* General Responsiveness Enhancements */
+.quiz-container {
+  max-width: 90%; /* Ensure container fits smaller screens */
+}
+
+.title, .question, button {
+  word-wrap: break-word; /* Handle long text gracefully */
+  overflow-wrap: break-word;
+}

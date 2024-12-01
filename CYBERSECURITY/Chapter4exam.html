@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter4 Exam</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cinematic Background with Blue Meteor Effect -->
+  <div class="background">
+    <div class="meteors">
+      <!-- Multiple meteors for cinematic effect -->
+      <div class="meteor" style="top: 10%; animation-delay: 0s;"></div>
+      <div class="meteor" style="top: 20%; animation-delay: 1s;"></div>
+      <div class="meteor" style="top: 40%; animation-delay: 2s;"></div>
+      <div class="meteor" style="top: 60%; animation-delay: 3s;"></div>
+      <div class="meteor" style="top: 80%; animation-delay: 4s;"></div>
+    </div>
+  </div>
+
+  <!-- Heart Animation -->
+  <div class="heart-container">
+    <div class="heart"></div>
+  </div>
+
+  <!-- Quiz Container -->
+  <div class="quiz-container">
+
+  <div style="position: absolute; top: 10px; left: 10px;">
+    <button onclick="location.href='index.html'" class="btn">⬅</button>
+  </div>
+
+  <div style="position: absolute; top: 10px; left: 10px;">
+    <button onclick="location.href='index.html'" class="btn">⬅ Return</button>
+  </div>
+    <h1 class="title">✨ Chapter4 Exam ✨</h1>
+    <div id="question" class="question"></div>
+    <div id="options" class="options"></div>
+    <div class="controls">
+      <button id="prev" class="btn">⬅ Previous</button>
+      <button id="next" class="btn">Next ➡</button>
+    </div>
+    <div id="progress" class="progress"></div>
+    <div id="message" class="message"></div>
+  </div>
+
+  <script src="script4.js"></script>
+</body>
+</html>
