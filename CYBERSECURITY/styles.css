@@ -252,3 +252,43 @@ button.incorrect {
   word-wrap: break-word; /* Handle long text gracefully */
   overflow-wrap: break-word;
 }
+
+/* Ensure "Previous" and "Next" buttons are side-by-side on small screens */
+@media (max-width: 480px) {
+  .controls {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .controls .btn {
+    flex: 1; /* Allow buttons to resize proportionally */
+    padding: 8px 10px; /* Reduce padding for smaller screens */
+    font-size: 0.9em; /* Adjust font size */
+  }
+}
+
+/* Ensure "Return" button is positioned above the quiz container */
+.return-btn {
+  position: relative;
+  display: block;
+  margin: 0 auto 20px auto; /* Center the button and add spacing below */
+  padding: 10px 20px;
+  font-size: 1em;
+  background: linear-gradient(145deg, #662d8c, #ed1e79);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.return-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(255, 20, 147, 0.7);
+}
+
+.quiz-container {
+  margin-top: 20px; /* Ensure space between return button and quiz container */
+}

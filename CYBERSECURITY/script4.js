@@ -126,10 +126,7 @@ fetch('Chapter4.json')
       messageElement.style.color = "#ff4e50";
 
       // Show animated heart only at the end of the quiz
-      const heartContainer = document.createElement('div');
-      heartContainer.classList.add('heart-container', 'active');
-      heartContainer.innerHTML = `<div class="heart"></div>`;
-      document.body.appendChild(heartContainer);
+     
     }
 
     // Start the quiz
